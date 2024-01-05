@@ -1,0 +1,125 @@
+/**
+ * Created by zhongyuan on 2018/3/8.
+ */
+/*
+*@color*:主题颜色
+*/
+@colocBlu: #0d94f3;
+@colorGreen: #0dbd73;
+/*
+*@fc*:font-color 默认字体颜色
+*/
+@fcf: #fff; //有背景色的时候
+@fc0: #000; // 按钮默认状态下
+/**
+* @dc*: primary-color按钮默认状态颜色
+*/
+@dc: #18a7e7; //全站默认蓝色按钮背景色
+@dch: #35bbf7; //hover 蓝色按钮hover色
+@dcd: #aee4fc; //disable 蓝色按钮禁用状态背景色
+
+/**
+* @sc*: success-color绿色
+*/
+@sc: #0dbd73; //全站默认绿色按钮背景色
+@sch: #24c682; //hover 绿色按钮hover色
+@scd: #a7e8cd; //disable 绿色按钮禁用状态背景色
+
+/**
+* @ec*: error-color红色
+*/
+@ec: #ff1111; //全站默认红色按钮背景色
+@ech: #ff4444; //hover 红色按钮hover色
+@ecd: #ffadad; //disable 红色按钮禁用状态背景色
+
+/**
+* @wc*: warning-color红色
+*/
+@wc: #ff6600; //全站橙色按钮背景色
+@wch: #ff8844; //hover 橙色按钮hover色
+@wcd: #ffc299; //disable 橙色按钮禁用状态背景色
+/**
+* @radio*: radio、checkBox颜色
+*/
+@radioBorder: #dcdfe6; // radio、checkBox默认边框颜色
+@radioback: #fff; // radio、checkBox默认背景颜色
+/**
+* @border*: border颜色
+*/
+@borderBottomColor: #e7e8ec;
+/**
+* @navbar*
+*/
+@sidebarWidth-lg: 256px;
+@sidebarTooltipRight-lg: -@sidebarItemWidth-lg - 10;
+@sidebarWhiteTooltipRight-lg: -@sidebarItemWidth-lg - 5;
+@sidebarItemWidth-lg: @sidebarWidth-lg - 40;
+
+@sidebarWidth-md: 180px;
+@sidebarTooltipRight-md: -@sidebarItemWidth-md - 10;
+@sidebarWhiteTooltipRight-md: -@sidebarItemWidth-md - 5;
+@sidebarItemWidth-md: @sidebarWidth-md - 20;
+
+@sidebarCollapseWidth: 50px;
+@sidebarBackgroundColor: #3376FF;
+@sidebarItemColor: #ffffff;
+@sidebarItemhoverColor: linear-gradient(90.00deg, #194bae 35%, #256cff 100%);
+@sidebarItemActiveColor: linear-gradient(90.00deg, #194bae 35%, #256cff 100%);
+@sidebarItemActiveTextColor: #ffffff;
+@sidebarSubMenuBackgroundColor: transparent;
+@sidebarWhiteThemeBackgroundColor: #ffffff;
+@sidebarWhiteThemeItemColor: #000000;
+@sidebarWhiteThemeItemActiveTextColor: #1890ff;
+@sidebarWhiteThemeItemhoverColor: #1890ff;
+@sidebarWhiteThemeBackgroundActiveColor: #FCF6F6;
+@sidebarWhiteThemeSubMenuBackgroundColor: #ffffff;
+
+@borderColor: #dfe4ed;
+@themeColor: #62ABFC;
+@Success: #67C23A;
+@Warning: #E6A23C;
+@Danger: #F56C6C;
+@info: #909399;
+
+// 面包屑的盒子
+.breadCream-box () {
+    height: 40px;
+    line-height: 40px;
+    padding-left: 20px;
+    background-color: #fff;
+    // border-top: 1px solid @borderColor;
+}
+
+.content-box () {
+    width: calc(~'100% - 80px');
+    background-color: #fff;
+    margin: 20px auto 0;
+    min-height: 760px;
+    padding: 20px;
+}
+
+.table-style () {
+    margin: 0 auto;
+    text-align: center;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.td-style () {
+    min-width: 170px;
+    height: 36px;
+    word-break: break-all;
+    /*允许在字内换行,即单词可分*/
+    word-wrap: break-word;
+    /*允许长单词或URL地址换行*/
+    border: 1px solid #eee;
+    font-weight: 500;
+}
+
+
+
+.content-box-pane () {
+    .content-box ();
+    width: calc(~'100% - 60px');
+    margin: 0
+}
