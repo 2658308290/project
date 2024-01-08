@@ -1,5 +1,5 @@
 <template>
-  <div class="timeStatistic">
+  <div class="timeIndex">
     <router-view></router-view>
   </div>
 </template>

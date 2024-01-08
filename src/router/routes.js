@@ -23,7 +23,7 @@ const mainPage = [
     children: [
       {
         path: '',
-        redirect: 'courseRegist'
+        redirect: ''
       },
       {
         path: 'courseRegist',
@@ -261,6 +261,7 @@ const mainPage = [
           }
         ]
       },
+      // 学院角色路由
       {
         path: 'planUp',
         name: 'planUp',
@@ -318,7 +319,34 @@ const mainPage = [
           keepAlive: false
         },
         children: [
-
+          {
+            path: '',
+            redirect: 'newsIndex'
+          },
+          {
+            path: 'newsIndex',
+            name: 'newsIndex',
+            component: () =>
+              import('../pages/main/routes/newsLink/newsIndex'),
+            meta: {
+              title: '院级培训新闻链接',
+              resource: 'dataSearch',
+              action: 'menu',
+              keepAlive: false
+            }
+          },
+          {
+            path: 'newsDetail',
+            name: 'newsDetail',
+            component: () =>
+              import('../pages/main/routes/newsLink/newsDetail'),
+            meta: {
+              title: '省级以上培训计划详情',
+              resource: 'dataSearch',
+              action: 'menu',
+              keepAlive: false
+            }
+          }
         ]
       },
       {
@@ -327,13 +355,170 @@ const mainPage = [
         component: () =>
               import('../pages/main/routes/collegeTime'),
         meta: {
-          title: '上报信息',
+          title: '本院培训学时统计',
+          resource: 'dataSearch',
+          action: 'menu',
+          keepAlive: false
+        },
+        children: [
+          {
+            path: '',
+            redirect: 'timeIndex'
+          },
+          {
+            path: 'timeIndex',
+            name: 'timeIndex',
+            component: () =>
+              import('../pages/main/routes/collegeTime/timeIndex'),
+            meta: {
+              title: '',
+              resource: 'dataSearch',
+              action: 'menu',
+              keepAlive: false
+            }
+          },
+          {
+            path: 'timeReport',
+            name: 'timeReport',
+            component: () =>
+              import('../pages/main/routes/collegeTime/timeReport'),
+            meta: {
+              title: '辅导员培训学时报告',
+              resource: 'dataSearch',
+              action: 'menu',
+              keepAlive: false
+            }
+          }
+
+        ]
+      },
+      // 学校角色路由
+      {
+        path: 'planManage',
+        name: 'planManage',
+        component: () =>
+            import(
+              '../pages/main/routes/planManage'
+            ),
+        meta: {
+          title: '',
+          resource: 'dataSearch',
+          action: 'menu',
+          keepAlive: false
+        }
+      },
+      {
+        path: 'RegistApproval',
+        name: 'RegistApproval',
+        component: () =>
+            import(
+              '../pages/main/routes/RegistApproval'
+            ),
+        meta: {
+          title: '',
+          resource: 'dataSearch',
+          action: 'menu',
+          keepAlive: false
+        }
+      },
+      {
+        path: 'planApproval',
+        name: 'planApproval',
+        component: () =>
+            import(
+              '../pages/main/routes/planApproval'
+            ),
+        meta: {
+          title: '',
+          resource: 'dataSearch',
+          action: 'menu',
+          keepAlive: false
+        }
+      },
+      {
+        path: 'evidenceMaterial',
+        name: 'evidenceMaterial',
+        component: () =>
+            import(
+              '../pages/main/routes/evidenceMaterial'
+            ),
+        meta: {
+          title: '',
+          resource: 'dataSearch',
+          action: 'menu',
+          keepAlive: false
+        }
+      },
+      {
+        path: 'timeCertification',
+        name: 'timeCertification',
+        component: () =>
+            import(
+              '../pages/main/routes/timeCertification'
+            ),
+        meta: {
+          title: '',
+          resource: 'dataSearch',
+          action: 'menu',
+          keepAlive: false
+        }
+      },
+      {
+        path: 'signupStatus',
+        name: 'signupStatus',
+        component: () =>
+            import(
+              '../pages/main/routes/signupStatus'
+            ),
+        meta: {
+          title: '',
+          resource: 'dataSearch',
+          action: 'menu',
+          keepAlive: false
+        }
+      },
+      {
+        path: 'schoolCourseEvaluation',
+        name: 'schoolCourseEvaluation',
+        component: () =>
+            import(
+              '../pages/main/routes/schoolCourseEvaluation'
+            ),
+        meta: {
+          title: '',
+          resource: 'dataSearch',
+          action: 'menu',
+          keepAlive: false
+        }
+      },
+      {
+        path: 'courseResourse',
+        name: 'courseResourse',
+        component: () =>
+            import(
+              '../pages/main/routes/courseResourse'
+            ),
+        meta: {
+          title: '',
+          resource: 'dataSearch',
+          action: 'menu',
+          keepAlive: false
+        }
+      },
+      {
+        path: 'schoolTimeStatistics',
+        name: 'schoolTimeStatistics',
+        component: () =>
+            import(
+              '../pages/main/routes/schoolTimeStatistics'
+            ),
+        meta: {
+          title: '',
           resource: 'dataSearch',
           action: 'menu',
           keepAlive: false
         }
       }
-
     ]
   }
 ]

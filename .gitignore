@@ -14,5 +14,5 @@ yarn-error.log*
 *.sln
 .editorconfig
 
-package-lock.json
+package-lock.jsongit 
 yarn.lock

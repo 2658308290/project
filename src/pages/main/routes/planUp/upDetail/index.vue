@@ -122,14 +122,14 @@
                 >
                   <el-table-column type="selection" width="55">
                   </el-table-column>
-                  <el-table-column label="日期" width="120">
-                    <template slot-scope="scope">{{ scope.row.date }}</template>
+                  <el-table-column label="姓名" width="120">
+                    <template slot-scope="scope">{{ scope.row.name }}</template>
                   </el-table-column>
-                  <el-table-column prop="name" label="姓名" width="120">
+                  <el-table-column prop="num" label="工号" width="120">
                   </el-table-column>
                   <el-table-column
-                    prop="address"
-                    label="地址"
+                    prop="gender"
+                    label="性别"
                     show-overflow-tooltip
                   >
                   </el-table-column>
@@ -147,14 +147,14 @@
                 >
                   <el-table-column type="selection" width="55">
                   </el-table-column>
-                  <el-table-column label="日期" width="120">
-                    <template slot-scope="scope">{{ scope.row.date }}</template>
+                  <el-table-column label="姓名" width="120">
+                    <template slot-scope="scope">{{ scope.row.name }}</template>
                   </el-table-column>
-                  <el-table-column prop="name" label="姓名" width="120">
+                  <el-table-column prop="num" label="工号" width="120">
                   </el-table-column>
                   <el-table-column
-                    prop="address"
-                    label="地址"
+                    prop="gender"
+                    label="性别"
                     show-overflow-tooltip
                   >
                   </el-table-column>
@@ -162,13 +162,19 @@
               </div>
             </div>
             <div class="btn">
-              <el-radio></el-radio>
-              <el-radio></el-radio>
+              <div class="btn_box">
+                <el-button icon="el-icon-arrow-left"></el-button>
+                <el-button icon="el-icon-arrow-right"></el-button>
+              </div>
             </div>
             <div class="teacherAdded teacherBox">
-              <div class="title">
-                <div>已添加辅导员</div>
+              <div class="title_box title paddingSet">
+                <div class="">辅导员名单</div>
                 <div class="clear">清空</div>
+              </div>
+
+              <div class="teacherAddedBox paddingSet">
+                请从左侧添加辅导员
               </div>
             </div>
           </div>
@@ -217,26 +223,26 @@ export default {
 
       tableData: [
         {
-          date: '2016-05-03',
+          num: '10009',
           name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
+          gender: '男'
         },
         {
-          date: '2016-05-02',
+          num: '10009',
           name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
+          gender: '男'
         },
         {
-          date: '2016-05-04',
+          num: '10009',
           name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
+          gender: '男'
         }
       ],
       tableData2: [
         {
-          date: '2016-05-03',
+          num: '10009',
           name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
+          gender: '男'
         }
       ],
       multipleSelection: []
@@ -415,13 +421,40 @@ export default {
           border-radius: 3px;
         }
         .btn {
+          display: flex;
+          flex-direction: column;
+          width: 56px;
+          align-items: center;
+          justify-content: center;
+          .btn_box {
+          }
         }
         .teacherAdded {
+          .paddingSet {
+            padding: 0px 9px;
+          }
           .title {
-            div {
-            }
+            width: 461px;
+            font-family: PingFangSC-Regular;
+            font-weight: 500;
+            font-size: 14px;
+            color: #212121;
+            padding: 13px;
+            border-bottom: 1px solid #dcdcdc;
+          }
+          .title_box {
+            display: flex;
+            justify-content: space-between;
             .clear {
+              color: #1696ffdc;
+              cursor: pointer;
             }
+          }
+          .teacherAddedBox {
+            display: flex;
+            justify-content: center;
+            height: 100%;
+            padding-top: 40%;
           }
         }
       }
@@ -433,6 +466,26 @@ export default {
 }
 /deep/ .el-table .el-table__cell {
   padding: 8px 0px;
+}
+
+/deep/ .btn .el-button {
+  width: 26px;
+  height: 26px;
+  padding: 10px;
+  border-radius: 3px;
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 16px 0px;
+}
+/deep/ .btn .el-button:focus,
+.el-button:hover {
+  border: 1px solid #166aff;
+}
+/deep/.el-button + .el-button,
+.el-checkbox.is-bordered + .el-checkbox.is-bordered {
+  margin-left: 0px;
 }
 </style>
 <style>

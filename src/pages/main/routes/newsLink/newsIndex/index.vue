@@ -1,5 +1,5 @@
 <template>
-  <div class="Upindex">
+  <div class="newsIndex">
     <el-card :style="{ borderRadius: '0', marginBottom: '12px' }">
       <stable ref="table" :fields="fields" :data="loadData" showIndex>
         <el-table-column label="姓名"> </el-table-column>
@@ -12,7 +12,7 @@
 import stable from '@/components/stable'
 import lists from '@/mixin/lists'
 export default {
-  name: 'Upindex',
+  name: 'newsIndex',
   mixins: [lists],
   data() {
     return {
