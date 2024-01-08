@@ -405,7 +405,39 @@ const mainPage = [
           resource: 'dataSearch',
           action: 'menu',
           keepAlive: false
-        }
+        },
+        children: [
+          {
+            path: '',
+            redirect: 'dataSearch'
+          },
+          {
+            path: 'dataSearch',
+            name: 'dataSearch',
+            component: () =>
+            import('../pages/main/routes/planManage/dataSearch'),
+            meta: {
+              title: '院级培训计划报送',
+              resource: 'dataSearch',
+              action: 'menu',
+              keepAlive: false
+            }
+
+          },
+          {
+            path: 'newEvent',
+            name: 'newEvent',
+            component: () =>
+            import('../pages/main/routes/planManage/newEvent'),
+            meta: {
+              title: '新建事件',
+              resource: 'dataSearch',
+              action: 'menu',
+              keepAlive: false
+            }
+
+          }
+        ]
       },
       {
         path: 'RegistApproval',
