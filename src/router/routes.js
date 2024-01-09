@@ -451,7 +451,19 @@ const mainPage = [
           resource: 'dataSearch',
           action: 'menu',
           keepAlive: false
-        }
+        },
+        children: [
+          {
+            path: '',
+            redirect: 'approvalIndex'
+          },
+          {
+            path: 'approvalIndex',
+            name: 'approvalIndex',
+            component: () => import('../pages/main/routes/RegistApproval/approvalIndex')
+
+          }
+        ]
       },
       {
         path: 'planApproval',
