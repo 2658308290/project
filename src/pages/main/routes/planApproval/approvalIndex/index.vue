@@ -1,11 +1,5 @@
 <template>
   <div class="beyondProvience">
-    <el-tabs v-model="activeName" @tab-click="handleClick">
-      <el-tab-pane label="省级及以上培训" name="provience"></el-tab-pane>
-      <el-tab-pane label="校级赋能培训" name="college"></el-tab-pane>
-      <el-tab-pane label="院级强基培训" name="school"></el-tab-pane>
-    </el-tabs>
-
     <search
       :base-api="baseApi"
       :fields="fields"
@@ -34,10 +28,10 @@
         <div>
           <div
             style="color: #000000e6;
- font-size: 14px;
- font-weight: 600;
- line-height: 22px;
- margin-bottom: 8px;"
+   font-size: 14px;
+   font-weight: 600;
+   line-height: 22px;
+   margin-bottom: 8px;"
           >
             <span style="color: red;">*</span>不同意报名理由
           </div>
@@ -65,39 +59,14 @@
       </span>
     </el-dialog>
 
-    <stable
-      v-show="activeName === 'provience'"
-      ref="table"
-      :fields="provienceField"
-      :data="loadData"
-      showIndex
-    >
+    <stable ref="table" :fields="provienceField" :data="loadData" showIndex>
     </stable>
-
-    <stable
-      v-show="activeName === 'college'"
-      ref="table"
-      :fields="collegeField"
-      :data="loadData"
-      showIndex
-    ></stable>
-    <stable
-      v-show="activeName === 'school'"
-      ref="table"
-      :fields="schoolField"
-      :data="loadData"
-      showIndex
-    ></stable>
-    <div class="college_notread">10</div>
-    <div class="school_notread">10</div>
-    <floatBox ref="floatBox" :alertBox="changeChildBox"></floatBox>
   </div>
 </template>
 <script>
 import search from '@/components/search/search'
 import stable from '@/components/stable'
 import lists from '@/mixin/lists'
-import floatBox from '../messageBox'
 export default {
   name: 'beyondProvience',
   mixins: [lists],
@@ -134,39 +103,16 @@ export default {
         { label: '申请时间', prop: 'endTime' },
         { label: '操作', prop: 'deadline' }
       ],
-      activeName: 'provience',
-      alertBox: '0',
+
       dialogVisible: false,
       innerVisible: false
     }
   },
   created() {},
-  methods: {
-    handleClick(tab, event) {
-      this.activeName = tab.name
-    },
-    changeAlertBox() {
-      if (this.alertBox === '0') {
-        this.alertBox = '1'
-        this.$refs.floatBox.changeAlertBox()
-      } else {
-        this.alertBox = '0'
-        this.$refs.floatBox.changeAlertBox()
-      }
-      console.log('父组件中的', this.alertBox)
-    },
-    changeFatherBox() {
-      if (this.alertBox === '0') {
-        this.alertBox = '1'
-      } else {
-        this.alertBox = '0'
-      }
-    }
-  },
+  methods: {},
   components: {
     stable,
-    search,
-    floatBox
+    search
   }
 }
 </script>
@@ -176,7 +122,7 @@ export default {
   width: 100%;
   height: 100%;
   padding-left: 16px;
-  padding-top: 29px;
+  padding-top: 2px;
   background: #ffffff;
   .college_notread {
     display: flex;

@@ -1,9 +1,9 @@
 <template>
-  <div v-if="alertBox === 1" class="alert_box">
-    <div class="contentBox">
+  <div v-if="alertBox === '1'" class="alert_box" @click="hidden">
+    <div @click.stop="" class="contentBox">
       <div class="title">
         <div>培训审批</div>
-        <div>×</div>
+        <div @click="changeAlertBox">×</div>
       </div>
       <div class="text">请选择是否同意</div>
       <div class="btn">
@@ -15,7 +15,28 @@
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {}
+  },
+  props: { alertBox: { type: String, default: '0' } },
+  methods: {
+    hidden() {
+      this.alertBox = '0'
+    },
+    changeAlertBox() {
+      if (this.alertBox === '0') {
+        this.alertBox = '1'
+        this.$emit('alertBox', this.alertBox)
+      } else {
+        this.alertBox = '0'
+        this.$emit('alertBox', this.alertBox)
+      }
+      console.log('子组件中的', this.alertBox)
+    }
+  },
+  created() {}
+}
 </script>
 
 <style lang="less" scoped>

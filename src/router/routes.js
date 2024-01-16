@@ -460,8 +460,13 @@ const mainPage = [
           {
             path: 'approvalIndex',
             name: 'approvalIndex',
-            component: () => import('../pages/main/routes/RegistApproval/approvalIndex')
-
+            component: () => import('../pages/main/routes/RegistApproval/approvalIndex'),
+            meta: {
+              title: '培训报名审批',
+              resource: 'dataSearch',
+              action: 'menu',
+              keepAlive: false
+            }
           }
         ]
       },
@@ -477,7 +482,25 @@ const mainPage = [
           resource: 'dataSearch',
           action: 'menu',
           keepAlive: false
-        }
+        },
+        children: [
+          {
+            path: '',
+            redirect: 'approvalIndex'
+          },
+          {
+            path: 'approvalIndex',
+            name: 'approvalIndex',
+            component: () => import('../pages/main/routes/planApproval/approvalIndex'),
+            meta: {
+              title: '学院强基计划审批',
+              resource: 'dataSearch',
+              action: 'menu',
+              keepAlive: false
+            }
+          }
+
+        ]
       },
       {
         path: 'evidenceMaterial',
